@@ -137,7 +137,7 @@ Image.prototype.resize = (version, cb) ->
     ".#{version.format}"
   ].join('')
 
-  if version.crop and version.crop.x ? 0 and version.crop.y ? 0 and version.crop.width ? 50 and version.crop.height ? 50
+  if version.crop and version.crop.x? and version.crop.y? and version.crop.width? and version.crop.height?
     img = @gm
       .crop(version.crop.width, version.crop.height, version.crop.x, version.crop.y)
       .resize(version.maxWidth, version.maxHeight, '!')
