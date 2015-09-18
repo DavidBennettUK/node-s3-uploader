@@ -165,7 +165,7 @@ Image.prototype.upload = (version, cb) ->
     ContentType: 'image/' + version.format
     Metadata: @opts.metadata or {}
     CacheControl: 'public, max-age=31536000'
-    Expires: new Date(Date.now() + 31536000).toUTCString()
+    Expires: new Date(Date.now() + 31536000)
 
   @config.s3.putObject options, (err, data) =>
     return cb err if err
