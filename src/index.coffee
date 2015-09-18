@@ -164,6 +164,7 @@ Image.prototype.upload = (version, cb) ->
     Body: fs.createReadStream(version.src)
     ContentType: 'image/' + version.format
     Metadata: @opts.metadata or {}
+    CacheControl: 'max-age=31536000'
 
   @config.s3.putObject options, (err, data) =>
     return cb err if err
